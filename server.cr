@@ -3,6 +3,7 @@ require "http"
 
 h = HTTP::WebSocketHandler.new do |socket, env|
   socket.close
+  puts "socket closed? #{socket.closed?}"
 end
 s = HTTP::Server.new(h)
 
